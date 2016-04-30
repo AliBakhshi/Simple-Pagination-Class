@@ -2,16 +2,18 @@
 
 class Pagination
 {
-    public $count = 6;
-    public $url = 'www.domain.com?action=news&page=';
-    public $total = 0;
+    public $count = 6; // Number Of Posts Per Page
+    public $url = 'www.domain.com?action=news&page=';  // Address Of All Posts With $_GET['page'] 
+    public $total = 0; // Number Of Total Posts (SELECT COUNT(*) AS count FROM posts)
 
+    // define current page number
     private function define_page()
     {
         isset($_GET['y']) && !empty($_GET['page']) && is_numeric($_GET['page']) ? $page = (int)$_GET['page'] : $page = 1;
         return $page;
     }
 
+    // get max page number 
     private function limit_page()
     {
         $page = $this->define_page();
@@ -24,6 +26,8 @@ class Pagination
         return $array;
     }
 
+    // view html code 
+    
     public function view()
     {
         $page = $this->define_page();
