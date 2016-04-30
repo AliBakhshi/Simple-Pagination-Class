@@ -19,8 +19,7 @@ class Pagination
         $page = $this->define_page();
         $start = $page * $this->count - $this->count;
         $fullnumber = $this->total;
-        $number = $fullnumber['count'];
-        $total = $number / $this->count;
+        $total = $fullnumber['count'] / $this->count;
         is_float($total) ? $max = $total + 2 : $max = $total + 1;
         $array = array('start'=>(int)$start,'max'=>(int)$max);
         return $array;
