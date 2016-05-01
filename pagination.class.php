@@ -9,7 +9,7 @@ class Pagination
     // define current page number
     private function define_page()
     {
-        isset($_GET['y']) && !empty($_GET['page']) && is_numeric($_GET['page']) ? $page = (int)$_GET['page'] : $page = 1;
+        isset($_GET['page']) && !empty($_GET['page']) && is_numeric($_GET['page']) ? $page = (int)$_GET['page'] : $page = 1;
         return $page;
     }
 
